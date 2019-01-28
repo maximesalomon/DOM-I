@@ -85,21 +85,18 @@ pTextContent[4].innerText = siteContent["main-content"]["vision-content"];
 
 // Contact
 
-h4Titles[5].innerHTML = siteContent["contact"]["contact-h4"];
+var h4Contact = document.getElementsByTagName('h4');
+h4Contact[5].innerHTML = siteContent["contact"]["contact-h4"];
 
 var pContact = document.getElementsByTagName('p');
 pTextContent[5].innerText = siteContent["contact"]["address"];
 pTextContent[6].innerText = siteContent["contact"]["phone"];
 pTextContent[7].innerText = siteContent["contact"]["email"];
 
+// Copywright
 
-
-
-
-
-
-
-
+var copyright = document.getElementsByTagName('p');
+copyright[8].innerText = siteContent["footer"]["copyright"];
 
 
 
