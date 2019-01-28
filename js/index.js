@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -42,9 +42,25 @@ var logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 var ctaImage = document.getElementById("cta-img");
-ctaImage.setAttribute('src', siteContent["section"]["img-src"])
+ctaImage.setAttribute('src', siteContent["cta"]["img-src"])
 
 var midImage = document.getElementById("middle-img");
-midImage.setAttribute('src', siteContent["section"]["img-src"])
+midImage.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
+
+//Navbar
+var link = document.getElementsByTagName('a');
+link[0].innerText = siteContent.nav["nav-item-1"];
+link[1].innerText = siteContent.nav["nav-item-2"];
+link[2].innerText = siteContent.nav["nav-item-3"];
+link[3].innerText = siteContent.nav["nav-item-4"];
+link[4].innerText = siteContent.nav["nav-item-5"];
+link[5].innerText = siteContent.nav["nav-item-6"];
+
+// Hero
+var headerTitle = document.getElementsByTagName("h1");
+headerTitle[0].innerHTML = siteContent.cta.h1;
+
+var ctaButton = document.getElementsByTagName("button");
+ctaButton[0].innerText = siteContent.cta.button;
 
