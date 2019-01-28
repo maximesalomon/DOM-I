@@ -49,7 +49,7 @@ midImage.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 
 // Navbar
-var link = document.getElementsByTagName('a');
+var link = document.querySelectorAll('a');
 
 link[0].innerText = siteContent.nav["nav-item-1"];
 link[1].innerText = siteContent.nav["nav-item-2"];
@@ -57,6 +57,27 @@ link[2].innerText = siteContent.nav["nav-item-3"];
 link[3].innerText = siteContent.nav["nav-item-4"];
 link[4].innerText = siteContent.nav["nav-item-5"];
 link[5].innerText = siteContent.nav["nav-item-6"];
+
+// Change color to green
+link.forEach(a => {
+  a.style.color = "green";
+});
+
+// AppendChild
+
+var navbar = document.getElementsByTagName('nav');
+
+var newLinkAppend = document.createElement("a");
+newLinkAppend.innerText = "Portfolio";
+newLinkAppend.style.color = "green";
+navbar[0].appendChild(newLinkAppend);
+
+// Prepend
+const newLinkPrepend = newLinkAppend.cloneNode(true);
+newLinkPrepend.innerText = "Hello";
+
+navbar[0].prepend(newLinkPrepend);
+
 
 // Hero
 var headerTitle = document.getElementsByTagName("h1");
