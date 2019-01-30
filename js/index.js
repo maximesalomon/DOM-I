@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM<br>Is<br>Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -38,5 +38,88 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
+var logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+var ctaImage = document.getElementById("cta-img");
+ctaImage.setAttribute('src', siteContent["cta"]["img-src"])
+
+var midImage = document.getElementById("middle-img");
+midImage.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+
+// Navbar
+var link = document.querySelectorAll('a');
+
+link[0].innerText = siteContent.nav["nav-item-1"];
+link[1].innerText = siteContent.nav["nav-item-2"];
+link[2].innerText = siteContent.nav["nav-item-3"];
+link[3].innerText = siteContent.nav["nav-item-4"];
+link[4].innerText = siteContent.nav["nav-item-5"];
+link[5].innerText = siteContent.nav["nav-item-6"];
+
+// Change color to green
+link.forEach(a => {
+  a.style.color = "green";
+});
+
+// AppendChild
+
+var navbar = document.getElementsByTagName('nav');
+
+var newLinkAppend = document.createElement("a");
+newLinkAppend.innerText = "Portfolio";
+newLinkAppend.style.color = "green";
+navbar[0].appendChild(newLinkAppend);
+
+// Prepend
+const newLinkPrepend = newLinkAppend.cloneNode(true);
+newLinkPrepend.innerText = "Hello";
+
+navbar[0].prepend(newLinkPrepend);
+
+
+// Hero
+var headerTitle = document.getElementsByTagName("h1");
+headerTitle[0].innerHTML = siteContent.cta.h1;
+
+var ctaButton = document.getElementsByTagName("button");
+ctaButton[0].innerText = siteContent.cta.button;
+
+// Main Content
+
+var h4Titles = document.getElementsByTagName('h4');
+
+h4Titles[0].innerHTML = siteContent["main-content"]["features-h4"];
+h4Titles[1].innerHTML = siteContent["main-content"]["about-h4"];
+h4Titles[2].innerHTML = siteContent["main-content"]["services-h4"];
+h4Titles[3].innerHTML = siteContent["main-content"]["product-h4"];
+h4Titles[4].innerHTML = siteContent["main-content"]["vision-h4"];
+
+
+var pTextContent = document.getElementsByTagName('p');
+pTextContent[0].innerText = siteContent["main-content"]["features-content"];
+pTextContent[1].innerText = siteContent["main-content"]["about-content"];
+pTextContent[2].innerText = siteContent["main-content"]["services-content"];
+pTextContent[3].innerText = siteContent["main-content"]["product-content"];
+pTextContent[4].innerText = siteContent["main-content"]["vision-content"];
+
+// Contact
+
+var h4Contact = document.getElementsByTagName('h4');
+h4Contact[5].innerHTML = siteContent["contact"]["contact-h4"];
+
+var pContact = document.getElementsByTagName('p');
+pTextContent[5].innerText = siteContent["contact"]["address"];
+pTextContent[6].innerText = siteContent["contact"]["phone"];
+pTextContent[7].innerText = siteContent["contact"]["email"];
+
+// Copywright
+
+var copyright = document.getElementsByTagName('p');
+copyright[8].innerText = siteContent["footer"]["copyright"];
+
+
+
+
+
